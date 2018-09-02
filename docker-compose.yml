@@ -7,9 +7,7 @@ services:
       dockerfile: Dockerfile
     environment:
       - APP_NAME=myapp
-    working_dir: /$APP_NAME
-    entrypoint: "env"
     volumes:
-      - "$PWD/$APP_NAME:/$APP_NAME"
+      - "$PWD/myapp:/myapp"
     ports:
       - "4200:4200"

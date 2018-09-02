@@ -10,3 +10,10 @@ RUN npm config set strict-ssl false
 
 #install project dependencies
 RUN npm install -g @angular/cli
+
+WORKDIR /
+
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
